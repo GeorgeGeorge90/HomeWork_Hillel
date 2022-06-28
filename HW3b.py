@@ -1,7 +1,4 @@
 
-
-
-
 countwords = input("Будь ласка введіть строку зі слів: ")
 
 result = len(countwords.split())
