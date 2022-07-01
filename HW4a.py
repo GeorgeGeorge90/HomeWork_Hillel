@@ -1,32 +1,26 @@
 
 user_input = input("Будь ласка введіть строку зі слів: ")
 
-splited_user_input = len(user_input.split())
+result = user_input.split()
 
-consonant_list =['b', 'c', 'd', 'f', 'g','h','j','k',
-                 'l','m','n','p','q','r','s','t','v','w','x','z']
+consonant_list =['a', 'e', 'i', 'o', 'u', 'y']
 
-countwords = ''
-add_word = ''
+word_count = 0
 
-for word in splited_user_input:
+for word in result:
     counter = 0
+
     for letter in word:
         if letter in consonant_list:
             counter += 1
-        if counter == 2:
-            add_word = word
-        if counter == 3:
-            add_word = 0
-            break
-        if letter not in consonant_list:
+        else:
             counter = 0
-    if add_word == 0:
-        break
-    if len(add_word) > len(long_word):
-        long_word = add_word
-if add_word == 0:
-    pass
-else:
-    print(f'The longest word with the couple consonants: {long_word}')
+
+        if counter == 2:
+            word_count += 1
+            break
+
+
+
+print("У вашому реченні " + str(word_count) + " слів(слова) з голосними буквами підряд.")
 
